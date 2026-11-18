@@ -1,0 +1,103 @@
+{
+  "source": "code-archive (QUESTDICE-AFTERLIFE-main.zip, a TanStack Start app on its own Lovable Cloud backend)",
+  "capabilities": [
+    {
+      "capability": "code",
+      "source": "src/** (routes, components, lib, assets)",
+      "outcome": "migrate",
+      "status": "done",
+      "next_action": "Copied; 1,124 tests pass; home + online lobby checked in browser"
+    },
+    {
+      "capability": "schema",
+      "source": "drizzle/migrations + src/integrations/supabase/types.ts (profiles, follows, maps, map_votes, map_comments, map_cards view, online_lobbies, online_seats, wallets, market_*; RPCs)",
+      "outcome": "migrate",
+      "status": "verified",
+      "next_action": "Recreated with RLS; rules dry-run with two simulated players passed"
+    },
+    {
+      "capability": "records",
+      "source": "old Cloud database (no export in archive)",
+      "outcome": "migrate",
+      "status": "pending",
+      "next_action": "Ask user for per-table CSV/JSON exports from the old project's Cloud database"
+    },
+    {
+      "capability": "auth identities",
+      "source": "Google + Microsoft sign-in (no user export in archive)",
+      "outcome": "migrate",
+      "status": "pending",
+      "next_action": "Google + Microsoft enabled; ask for users export (id, email); link original IDs on first sign-in by verified email"
+    },
+    {
+      "capability": "authorization",
+      "source": "RLS + SECURITY DEFINER functions",
+      "outcome": "migrate",
+      "status": "verified",
+      "next_action": "Own-only edits, private maps, wallet privacy and purchases checked by simulation"
+    },
+    {
+      "capability": "uploaded file bytes",
+      "source": "none detected (no storage usage)",
+      "outcome": "not applicable",
+      "status": "verified",
+      "next_action": "none"
+    },
+    {
+      "capability": "AI (Dicey map builder)",
+      "source": "Lovable AI Gateway via LOVABLE_API_KEY",
+      "outcome": "preserve",
+      "status": "verified",
+      "next_action": "Live Dicey request returned valid building steps"
+    },
+    {
+      "capability": "realtime broadcast",
+      "source": "online lobby bump channel",
+      "outcome": "preserve",
+      "status": "verified",
+      "next_action": "Two-browser lobby join synced"
+    },
+    {
+      "capability": "public endpoints / webhooks / callbacks",
+      "source": "none detected",
+      "outcome": "not applicable",
+      "status": "verified",
+      "next_action": "none"
+    },
+    {
+      "capability": "schedules",
+      "source": "none detected (cron-auth helper unused)",
+      "outcome": "not applicable",
+      "status": "verified",
+      "next_action": "none"
+    },
+    {
+      "capability": "payments",
+      "source": "none (real-money packs were planned, not built)",
+      "outcome": "not applicable",
+      "status": "verified",
+      "next_action": "none"
+    },
+    {
+      "capability": "secrets",
+      "source": "LOVABLE_API_KEY, Cloud keys (platform-managed)",
+      "outcome": "platform-managed",
+      "status": "verified",
+      "next_action": "LOVABLE_API_KEY present via Cloud"
+    },
+    {
+      "capability": "cutover",
+      "source": "old project URL",
+      "outcome": "pending",
+      "status": "pending",
+      "next_action": "Publish new app and share new link"
+    },
+    {
+      "capability": "verification",
+      "source": "-",
+      "outcome": "pending",
+      "status": "pending",
+      "next_action": "Signed-in UI flows not run in a browser: no account exists yet in the new Cloud"
+    }
+  ]
+}
